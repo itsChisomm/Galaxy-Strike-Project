@@ -18,7 +18,7 @@
                 {
                     "name": "Fire",
                     "type": "Button",
-                    "id": "8a52c14b-4690-404f-88ca-f8dcea1721a3",
+                    "id": "4775ca0c-ab23-41f9-a791-f6c684519f01",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -83,9 +83,9 @@
                 },
                 {
                     "name": "",
-                    "id": "46f5f9f6-aa14-4b5c-bc09-9b29cdf0a259",
+                    "id": "7f45cbd8-4808-4aba-ac73-88f7ec7fc5b6",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
                     "action": "Fire",
