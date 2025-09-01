@@ -2,15 +2,32 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] GameObject destroyedVFX;
+    [SerializeField] int hitPoints = 3;
+    [SerializeField] int scoreValue = 10;
+
+    ScoreBoard scoreBoard;
+
+    private void Start()
     {
-        
+        scoreBoard = FindFirstObjectByType<ScoreBoard>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnParticleCollision(GameObject other)
     {
-        
+        ProcessHit();
+
+    }
+
+    private void ProcessHit()
+    {
+        hitPoints--;
+
+        if (hitPoints <= 0)
+        {
+            scoreBoard.IncreaseScore(scoreValue);
+            Instantiate(destroyedVFX, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
     }
 }
