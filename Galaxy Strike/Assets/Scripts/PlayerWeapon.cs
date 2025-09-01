@@ -3,13 +3,20 @@ using UnityEngine.InputSystem;
 
 public class PlayerWeapon : MonoBehaviour
 {
-    [SerializeField] GameObject laser;
+    [SerializeField] GameObject[] lasers;
+    [SerializeField] RectTransform crosshair;
 
     bool isFiring = false;
+
+    void Start()
+    {
+        Cursor.visible = false;
+    }
 
     void Update()
     {
         ProcessFiring();
+        MoveCrosshair();
     }
     public void OnFire(InputValue value)
     {
@@ -18,10 +25,18 @@ public class PlayerWeapon : MonoBehaviour
 
     void ProcessFiring()
     {
-        if (isFiring)
-        {
-           var emissionModule = laser.GetComponent<ParticleSystem>().emission;
-            emissionModule.enabled = isFiring;
-        }
+            foreach (GameObject laser in lasers)
+
+            {
+                var emissionModule = laser.GetComponent<ParticleSystem>().emission;
+                emissionModule.enabled = isFiring;
+            } 
+                 
+    }
+
+    void MoveCrosshair()
+    {
+               
+        crosshair.position = Mouse.current.position.ReadValue(); ;
     }
 }
