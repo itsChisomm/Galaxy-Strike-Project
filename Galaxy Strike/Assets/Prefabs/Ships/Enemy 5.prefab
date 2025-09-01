@@ -92,7 +92,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4935535641078839679, guid: 93603f8992bda8e49aa299b448917a0e, type: 3}
       propertyPath: scoreValue
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5475387863292193880, guid: 93603f8992bda8e49aa299b448917a0e, type: 3}
       propertyPath: m_Size.x
