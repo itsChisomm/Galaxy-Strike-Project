@@ -55,7 +55,7 @@ public class PlayerWeapon : MonoBehaviour
     {
                foreach (GameObject laser in lasers)
         {
-            Vector3 fireDirection = targetPoint.position - laser.transform.position; // Calculate the direction from the laser to the target point
+            Vector3 fireDirection = targetPoint.position - this.transform.position; // Calculate the direction from the laser to the target point
             Quaternion rotationToTarget = Quaternion.LookRotation(fireDirection); // Calculate the rotation needed to look at the target point
             laser.transform.rotation = rotationToTarget; // Aim the laser at the target point
         }
